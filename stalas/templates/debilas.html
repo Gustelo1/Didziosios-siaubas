@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tu durnas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .hero {
+            position: relative;
+            z-index: 10;
+        }
+
+        .main-text {
+            font-size: 5rem;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .floating-emoji {
+            position: absolute;
+            font-size: 3rem;
+            animation: float 15s infinite;
+            opacity: 0;
+            z-index: 1;
+            top: 100vh;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-200vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .floating-emoji:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+        .floating-emoji:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 15s; }
+        .floating-emoji:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 13s; }
+        .floating-emoji:nth-child(4) { left: 40%; animation-delay: 1s; animation-duration: 14s; }
+        .floating-emoji:nth-child(5) { left: 50%; animation-delay: 3s; animation-duration: 16s; }
+        .floating-emoji:nth-child(6) { left: 60%; animation-delay: 5s; animation-duration: 11s; }
+        .floating-emoji:nth-child(7) { left: 70%; animation-delay: 2.5s; animation-duration: 13s; }
+        .floating-emoji:nth-child(8) { left: 80%; animation-delay: 4.5s; animation-duration: 15s; }
+        .floating-emoji:nth-child(9) { left: 90%; animation-delay: 1.5s; animation-duration: 14s; }
+        .floating-emoji:nth-child(10) { left: 15%; animation-delay: 3.5s; animation-duration: 12s; }
+    </style>
+</head>
+<body>
+    <div class="floating-emoji">🍆</div>
+    <div class="floating-emoji">🍆</div>
+    <div class="floating-emoji">🍆</div>
+    <div class="floating-emoji">🍆</div>
+    <div class="floating-emoji">🍆</div>
+    <div class="floating-emoji">🍆</div>
+    <div class="floating-emoji">🍆</div>
+    <div class="floating-emoji">🍆</div>
+    <div class="floating-emoji">🍆</div>
+    <div class="floating-emoji">🍆</div>
+
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title main-text has-text-white">
+                    Tu durnas
+                </h1>
+                <p class="subtitle has-text-white is-size-4 mt-4">
+                    🎉 Sveikiname! 🎉
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

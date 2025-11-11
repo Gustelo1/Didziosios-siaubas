@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load form_tags %}
+{% load static %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="columns is-vcentered">
+            <div class="column">
+                <h1 class="title">ZDAROWA</h1>
+            </div>
+            <div class="column is-narrow">
+                <div class="buttons">
+                    <a href="{% url 'signup' %}" class="button is-primary">Signup</a>
+                </div>
+            </div>
+            <div class="column is-narrow">
+                <div class="buttons">
+                    <a href="{% url 'login' %}" class="button is-primary">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container mt-6">
+        <div class="columns is-centered">
+            <div class="column is-5-tables is-4-desktop is-3-widescreen">
+                <h1 class="title has-text-centered">Cofounders</h1>
+            </div>
+        </div>
+
+
+        <div class="columns is-multiline is-centered">
+            <div class="column is-one-quarter">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-square">
+                            <img src="{% static 'images/people/martin_smith.jpg' %}" alt="Martin Smith">
+                        </figure>
+                    </div>
+                    <div class="card-content has-text-centered">
+                        <h4><b>Martin Smith (Sūris)</b></h4>
+                        <p>Genialiai autistas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-one-quarter">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-square">
+                            <img src="{% static 'images/people/kajuban.webp' %}" alt="Kajuban">
+                        </figure>
+                    </div>
+                    <div class="card-content has-text-centered">
+                        <h4><b>Kajuban (Velnias)</b></h4>
+                        <p>Autistiškai genialus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% load form_tags %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+          <div class="box">
+            <h1 class="title has-text-centered has-text-primary">
+              Prisijunkite prie gyventojų
+            </h1>
+
+            <form method="post" novalidate>
+              {% csrf_token %}
+
+              {% if form.non_field_errors %}
+                <div class="notification is-danger is-light">
+                  {{ form.non_field_errors }}
+                </div>
+              {% endif %}
+
+              <div class="field">
+                <label class="label">{{ form.username.label }}</label>
+                <div class="control has-icons-left">
+                  {{ form.username }}
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+                {% if form.username.errors %}
+                  <p class="help is-danger">{{ form.username.errors.0 }}</p>
+                {% endif %}
+              </div>
+
+              <div class="field">
+                <label class="label">{{ form.email.label }}</label>
+                <div class="control has-icons-left">
+                  {{ form.email }}
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+                </div>
+                {% if form.email.errors %}
+                  <p class="help is-danger">{{ form.email.errors.0 }}</p>
+                {% endif %}
+              </div>
+
+              <div class="field">
+                <label class="label">{{ form.password1.label }}</label>
+                <div class="control has-icons-left">
+                  {{ form.password1 }}
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </div>
+                {% if form.password1.errors %}
+                  <p class="help is-danger">{{ form.password1.errors.0 }}</p>
+                {% else %}
+                  <p class="help">Password must meet security requirements</p>
+                {% endif %}
+              </div>
+
+              <div class="field">
+                <label class="label">{{ form.password2.label }}</label>
+                <div class="control has-icons-left">
+                  {{ form.password2 }}
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </div>
+                {% if form.password2.errors %}
+                  <p class="help is-danger">{{ form.password2.errors.0 }}</p>
+                {% endif %}
+              </div>
+
+              <div class="field">
+                <label class="label">{{ form.favourite_colour.label }}</label>
+                <div class="control has-icons-left">
+                  {{ form.favourite_colour }}
+                </div>
+                <p>
+                  Yra neteisingas atsakymas
+                </p>
+              </div>
+
+              <div class="field">
+                <label class="label">{{ form.dating_status.label }}</label>
+                <div class="control has-icons-left">
+                  {{ form.dating_status }}
+                </div>
+                <p>
+                  Yra neteisingas atsakymas
+                </p>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <button type="submit" class="button is-primary is-fullwidth">
+                    <span class="icon">
+                      <i class="fas fa-user-plus"></i>
+                    </span>
+                    <span>Sign Up</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div class="has-text-centered mt-4">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
