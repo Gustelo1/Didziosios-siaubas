@@ -1,1 +1,46 @@
-.idea
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.env
+*.venv/
+venv/
+ENV/
+env/
+*.log
+
+# Django
+*.pot
+*.py[cod]
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# Node / React / Vite
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+.vite/
+dist/
+*.tsbuildinfo
+
+# Mac / OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Other
+*.swp
