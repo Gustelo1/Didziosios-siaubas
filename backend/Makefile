@@ -18,12 +18,6 @@ user:
 docker:
 	docker-compose up -d
 
-rebuild_db:
-	docker exec -i katalogas-postgres-1 psql -U adp -d adp-dev -c "DROP SCHEMA public CASCADE; CREATE SCHEMA public;" && \
-	docker exec -i katalogas-postgres-1 psql -U adp -d adp-dev < backup.sql && \
-	python manage.py migrate && \
-	python manage.py rebuild_index --noinput
-
 lint:
 	ruff format .
 
@@ -34,13 +28,5 @@ format:
 	ruff check . --fix && \
     ruff format .
 
-translations:
-	cd vitrina && \
-	poetry run python ../manage.py makemessages -l en --no-location && \
-	poetry run python ../manage.py compilemessages -l en && \
-	cd ..
-
-delete_db:
-	docker exec -i katalogas-postgres-1 psql -U adp -d adp-dev -c "DROP SCHEMA public CASCADE; CREATE SCHEMA public;"
 shell:
 	python manage.py shell
